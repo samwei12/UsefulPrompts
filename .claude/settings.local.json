@@ -3,7 +3,10 @@
     "allow": [
       "mcp__filesystem__list_directory",
       "mcp__filesystem__read_text_file",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git config:*)",
+      "Bash(git commit:*)",
+      "Bash(git log:*)"
     ],
     "deny": []
   }
