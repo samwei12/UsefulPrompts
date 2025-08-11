@@ -1,0 +1,49 @@
+[user]
+	name = samwei12
+	email = dongxiaosen@icloud.com
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[core]
+	excludesfile = /Users/samwei12/.gitignore_global
+	autocrlf = input
+	safeculf = true
+	ignorecase = false
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[color]
+	ui = true
+[alias]
+	st = status
+	ci = commit -m
+	co = checkout
+	br = branch
+	last = log -1 HEAD
+[push]
+	default = simple
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+	# rebase = true
+[branch]
+    # autosetuprebase = always
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+	keepBackup = false
+[diff]
+	tool = Kaleidoscope
+[commit]
+	template = /Users/samwei12/.stCommitMsg
+[http]
+	postBuffer = 10485760
